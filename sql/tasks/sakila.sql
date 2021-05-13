@@ -21,3 +21,21 @@ SELECT title FROM film JOIN film_category
 ON film.film_id = film_category.film_id
 JOIN category 
 ON film_category.category_id = category.category_id WHERE category.name = "Horror";
+
+-- bonus examples 
+-- 1)
+SELECT name FROM language ORDER BY name DESC;
+-- 2)
+SELECT first_name, last_name FROM actor WHERE last_name like '%son%';
+-- 3)
+SELECT a.last_name, COUNT(a.last_name) FROM actor a GROUP BY a.last_name HAVING COUNT(a.last_name) = 1 ORDER BY last_name DESC;
+-- 4) 
+SELECT actor.actor_id, actor.first_name, COUNT(*) as c
+FROM actor 
+join film_actor 
+ON actor.actor_id = film_actor.actor_id
+GROUP BY actor.actor_id
+ORDER BY c DESC
+LIMIT 1;
+show tables;
+desc film_actor;

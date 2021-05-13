@@ -75,5 +75,5 @@ SELECT  name FROM products;
 SELECT * FROM products WHERE name = "Nintento 64";
 SELECT * FROM customers WHERE age > 20;
 SELECT * FROM customers WHERE age < 20;
-
-SELECT c.date AS customer_date, p.date AS product_date FROM customers c JOIN products p ON customer_date = product_date;
+SELECT * FROM customers c JOIN products p ON c.date_placed = p.date_placed;
+-- SELECT c.date_placed AS customer_date, p.date_placed AS product_dateproduct_dateproduct_date FROM customers c JOIN products p ON customer_date = product_date;
